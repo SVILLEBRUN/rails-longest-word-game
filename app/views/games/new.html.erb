@@ -1,0 +1,28 @@
+
+<h1>New Game</h1>
+<div class="grid">
+  <div class="grid-letter"><%= @grid[0] %></div>
+  <div class="grid-letter"><%= @grid[1] %></div>
+  <div class="grid-letter"><%= @grid[2] %></div>
+  <div class="grid-letter"><%= @grid[3] %></div>
+  <div class="grid-letter"><%= @grid[4] %></div>
+  <div class="grid-letter"><%= @grid[5] %></div>
+  <div class="grid-letter"><%= @grid[6] %></div>
+  <div class="grid-letter"><%= @grid[7] %></div>
+  <div class="grid-letter"><%= @grid[8] %></div>
+  <div class="grid-letter"><%= @grid[9] %></div>
+</div>
+
+
+
+<form class="row my-3" action="/score" method="POST" data-turbo="false">
+  <div class="col">
+      <input type="text" class="form-control" name="word" placeholder="Your word">
+  </div>
+
+  <div class="col-2 d-flex justify-content-center">
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </div>
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <%= hidden_field_tag :grid, @grid %>
+</form>
